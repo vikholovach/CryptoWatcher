@@ -60,8 +60,6 @@ struct CoinRow: View {
         }
     }
     
-    
-    
 }
 
 struct CoinRow_Previews: PreviewProvider {

@@ -11,14 +11,12 @@ struct FavoriteButton: View {
     
     private let realm = RealmManager.shared
     
-    
     @Binding var isSet: Bool
     @State private var rotationAngle: Double = 0
     @EnvironmentObject var modelData: CoinViewModel
  
     let coin: CoinData
   
-    
     private var coinIndex: Int? {
         modelData.coins.firstIndex(where: {
             $0.id == coin.id
@@ -48,17 +46,15 @@ struct FavoriteButton: View {
             .labelStyle(.iconOnly)
             .foregroundColor(
                 isSet
-                ? .yellow
+                ? Color(#colorLiteral(red: 0.3484552801, green: 0.933657825, blue: 0.9058339596, alpha: 1)).opacity(0.7)
                 : .gray)
         }
         .rotationEffect(.degrees(rotationAngle))
-        .animation(.easeInOut(duration: 0.24))
+        .animation(.easeInOut(duration: 0.5))
         .scaleEffect(
             isSet
             ? 1.2
             : 1.0)
-        
-        
     }
     
     private func updateRealm(with coin: CoinData) {
@@ -76,6 +72,7 @@ struct FavoriteButton: View {
             self.realm.add(coinToAdd)
         }
     }
+    
 }
 
 struct FavoriteButton_Previews: PreviewProvider {
