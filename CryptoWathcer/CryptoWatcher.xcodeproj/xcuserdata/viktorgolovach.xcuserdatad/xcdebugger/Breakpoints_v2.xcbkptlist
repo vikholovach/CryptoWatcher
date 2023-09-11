@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "7362EC4A-8788-4909-B5EC-22284B519CD0"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C2CEB736-DC32-498D-9C95-DD8E931A6E18"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CryptoWathcer/PresentationLayer/NetworkService/NetworkService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "fetchPrice()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "C2CEB736-DC32-498D-9C95-DD8E931A6E18 - 4218bd22ae336856"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for CryptoWatcher.NetworkService.fetchPrice() async -&gt; Swift.Result&lt;Swift.Array&lt;CryptoWatcher.CoinData&gt;, Swift.Error&gt;"
+                  moduleName = "CryptoWatcher"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/viktorgolovach/Desktop/myApps/CryptoWatcher/CryptoWathcer/CryptoWathcer/PresentationLayer/NetworkService/NetworkService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "31"
+                  endingLineNumber = "31"
+                  offsetFromSymbolStart = "584">
+               </Location>
+               <Location
+                  uuid = "C2CEB736-DC32-498D-9C95-DD8E931A6E18 - 898719f0ff240a57"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(4) suspend resume partial function for CryptoWatcher.NetworkService.fetchPrice() async -&gt; Swift.Result&lt;Swift.Array&lt;CryptoWatcher.CoinData&gt;, Swift.Error&gt;"
+                  moduleName = "CryptoWatcher"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/viktorgolovach/Desktop/myApps/CryptoWatcher/CryptoWathcer/CryptoWathcer/PresentationLayer/NetworkService/NetworkService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "31"
+                  endingLineNumber = "31"
+                  offsetFromSymbolStart = "120">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
