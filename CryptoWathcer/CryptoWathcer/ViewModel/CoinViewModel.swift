@@ -11,13 +11,17 @@ import Foundation
 final class CoinViewModel: ObservableObject {
     @Published var coins: [CoinData] = [CoinData]()
     
+    // realm
+    private let realm = RealmManager.shared
+    
     // to use in preview as mock data
     let mockCoin = CoinData(
         id: "bitcoin",
         symbol: "BTC",
         name: "Bitcoin",
         priceUsd: "25830.5227396003309120",
-        changePercent24Hr: "-0.1570636474522199")
+        changePercent24Hr: "-0.1570636474522199",
+        isFavorite: false)
     
     // timer to run requests
     var requestTimer: Timer.TimerPublisher!
@@ -46,7 +50,7 @@ final class CoinViewModel: ObservableObject {
                         switch response {
                         case .success(let coins):
                             //apply data to publisher
-                            self.coins = coins
+                            self.coins = self.filter(coins)
                         case .failure(let error):
                             print(error)
                         }
@@ -54,5 +58,21 @@ final class CoinViewModel: ObservableObject {
                 }
             }
             .store(in: &cancellables)
+    }
+    
+    private func filter(_ coins: [CoinData]) -> [CoinData] {
+        var tempArray: [CoinData] = coins
+        if realm.favoriteCoins.isEmpty {
+            return coins
+        } else {
+            realm.favoriteCoins.forEach { favCoin in
+                if let index = tempArray.firstIndex(where: {
+                    $0.id == favCoin.coindID
+                }) {
+                    tempArray[index].isFavorite = true
+                }
+            }
+            return tempArray
+        }
     }
 }

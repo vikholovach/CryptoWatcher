@@ -15,18 +15,21 @@ struct CoinList: View {
     
     var filteredCoins: [CoinData] {
         modelData.coins.filter { coin in
-            !showFavoritesOnly || coin.isFavorite!
+            return !showFavoritesOnly || coin.isFavorite
         }
     }
+    
     
     var body: some View {
         NavigationView {
             List {
                 Toggle(isOn: $showFavoritesOnly) {
                     Text("Favorite coins")
+                    
                 }
-                
-                ForEach(filteredCoins) { coin in
+                ForEach(showFavoritesOnly
+                        ? filteredCoins
+                        : modelData.coins) { coin in
                     CoinRow(coin: coin)
                 }
             }

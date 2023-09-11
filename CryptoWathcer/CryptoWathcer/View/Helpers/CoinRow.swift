@@ -9,19 +9,18 @@ import SwiftUI
 
 struct CoinRow: View {
     
-    
     @EnvironmentObject var modelData: CoinViewModel
     
     let coin: CoinData
     
-    private var coinIndex: Int {
+    private var coinPrice: Float {
+        Float(coin.priceUsd) ?? 0
+    }
+    
+    var coinIndex: Int {
         modelData.coins.firstIndex(where: {
             $0.id == coin.id
         })!
-    }
-    
-    private var coinPrice: Float {
-        Float(coin.priceUsd) ?? 0
     }
     
     //MARK: - Computed properties
@@ -44,7 +43,7 @@ struct CoinRow: View {
                     .frame(maxWidth: .infinity, alignment: .trailing)
                     .font(.subheadline)
                     .fontWeight(.medium)
-               
+                    
                 Text("24h ↑ \(String(format:"%.02f", coinFloatPercent))%")
                     .frame(maxWidth: .infinity, alignment: .trailing)
                     .font(.subheadline)
@@ -55,11 +54,13 @@ struct CoinRow: View {
                     )
             }
             
-           
-            FavoriteButton(didChange: .constant(true))
-
+            FavoriteButton(isSet: $modelData.coins[coinIndex].isFavorite, coin: self.coin)
+            
         }
     }
+    
+    
+    
 }
 
 struct CoinRow_Previews: PreviewProvider {

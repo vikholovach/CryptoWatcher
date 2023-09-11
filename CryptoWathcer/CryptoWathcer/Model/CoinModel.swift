@@ -20,7 +20,7 @@ struct CoinData: Codable, Equatable, Hashable, Identifiable {
     
     // not containt in JSON resppnse
     // so we adding coding keys 
-    var isFavorite: Bool? = false
+    var isFavorite: Bool = false
     
     private enum CodingKeys: String, CodingKey {
         case id
@@ -28,6 +28,5 @@ struct CoinData: Codable, Equatable, Hashable, Identifiable {
         case name
         case priceUsd
         case changePercent24Hr
-        case isFavorite
     }
 }

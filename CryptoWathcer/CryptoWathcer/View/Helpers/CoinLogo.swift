@@ -24,12 +24,12 @@ struct CoinLogo: View {
             .resizable()
             .clipShape(Circle())
             .frame(
-                width: 48,
-                height: 48)
+                width: 40,
+                height: 40)
             .overlay{
-                Circle().stroke(.white, lineWidth: 4)
+                Circle().stroke(.white, lineWidth: 2)
             }
-            .shadow(color: .purple, radius: 7)
+            .shadow(color: .purple, radius: 5)
             
     }
 }

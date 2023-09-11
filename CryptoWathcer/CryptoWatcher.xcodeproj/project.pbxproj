@@ -18,7 +18,11 @@
 		367450B32AADFB7F00FD3EC0 /* CoinList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 367450B22AADFB7F00FD3EC0 /* CoinList.swift */; };
 		367450B62AADFB9D00FD3EC0 /* CoinModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 367450B52AADFB9D00FD3EC0 /* CoinModel.swift */; };
 		367450B82AADFF1F00FD3EC0 /* CoinViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 367450B72AADFF1F00FD3EC0 /* CoinViewModel.swift */; };
-		367450BC2AAE11BD00FD3EC0 /* FavoriteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 367450BB2AAE11BD00FD3EC0 /* FavoriteButton.swift */; };
+		3683F1262AAEE0B000C1590E /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 3683F1252AAEE0B000C1590E /* Realm */; };
+		3683F1282AAEE0B000C1590E /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 3683F1272AAEE0B000C1590E /* RealmSwift */; };
+		3683F12B2AAEE10700C1590E /* FavoriteCoin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3683F12A2AAEE10700C1590E /* FavoriteCoin.swift */; };
+		3683F12D2AAEE1DF00C1590E /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3683F12C2AAEE1DF00C1590E /* RealmManager.swift */; };
+		3683F1302AAF2A5800C1590E /* FavoriteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3683F12F2AAF2A5800C1590E /* FavoriteButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,7 +37,9 @@
 		367450B22AADFB7F00FD3EC0 /* CoinList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinList.swift; sourceTree = "<group>"; };
 		367450B52AADFB9D00FD3EC0 /* CoinModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinModel.swift; sourceTree = "<group>"; };
 		367450B72AADFF1F00FD3EC0 /* CoinViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinViewModel.swift; sourceTree = "<group>"; };
-		367450BB2AAE11BD00FD3EC0 /* FavoriteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteButton.swift; sourceTree = "<group>"; };
+		3683F12A2AAEE10700C1590E /* FavoriteCoin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCoin.swift; sourceTree = "<group>"; };
+		3683F12C2AAEE1DF00C1590E /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
+		3683F12F2AAF2A5800C1590E /* FavoriteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +47,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3683F1282AAEE0B000C1590E /* RealmSwift in Frameworks */,
+				3683F1262AAEE0B000C1590E /* Realm in Frameworks */,
 				367450AF2AADF94F00FD3EC0 /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -99,6 +107,7 @@
 		367450A92AADF7B800FD3EC0 /* PresentationLayer */ = {
 			isa = PBXGroup;
 			children = (
+				3683F1292AAEE0B800C1590E /* RealmService */,
 				367450AC2AADF7D800FD3EC0 /* NetworkService */,
 			);
 			path = PresentationLayer;
@@ -125,7 +134,7 @@
 			children = (
 				367450B02AADFA5B00FD3EC0 /* CoinRow.swift */,
 				3607A6112AADF61700627E1C /* CoinLogo.swift */,
-				367450BB2AAE11BD00FD3EC0 /* FavoriteButton.swift */,
+				3683F12F2AAF2A5800C1590E /* FavoriteButton.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -136,6 +145,15 @@
 				367450B72AADFF1F00FD3EC0 /* CoinViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		3683F1292AAEE0B800C1590E /* RealmService */ = {
+			isa = PBXGroup;
+			children = (
+				3683F12A2AAEE10700C1590E /* FavoriteCoin.swift */,
+				3683F12C2AAEE1DF00C1590E /* RealmManager.swift */,
+			);
+			path = RealmService;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -156,6 +174,8 @@
 			name = CryptoWatcher;
 			packageProductDependencies = (
 				367450AE2AADF94F00FD3EC0 /* Kingfisher */,
+				3683F1252AAEE0B000C1590E /* Realm */,
+				3683F1272AAEE0B000C1590E /* RealmSwift */,
 			);
 			productName = CryptoWathcer;
 			productReference = 3607A5FF2AADD16400627E1C /* CryptoWatcher.app */;
@@ -187,6 +207,7 @@
 			mainGroup = 3607A5F62AADD16400627E1C;
 			packageReferences = (
 				367450AD2AADF94F00FD3EC0 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				3683F1242AAEE0B000C1590E /* XCRemoteSwiftPackageReference "realm-cocoa" */,
 			);
 			productRefGroup = 3607A6002AADD16400627E1C /* Products */;
 			projectDirPath = "";
@@ -216,12 +237,14 @@
 			files = (
 				367450B32AADFB7F00FD3EC0 /* CoinList.swift in Sources */,
 				3607A6052AADD16400627E1C /* ContentView.swift in Sources */,
+				3683F12D2AAEE1DF00C1590E /* RealmManager.swift in Sources */,
+				3683F12B2AAEE10700C1590E /* FavoriteCoin.swift in Sources */,
 				3607A6122AADF61700627E1C /* CoinLogo.swift in Sources */,
-				367450BC2AAE11BD00FD3EC0 /* FavoriteButton.swift in Sources */,
 				367450B82AADFF1F00FD3EC0 /* CoinViewModel.swift in Sources */,
 				367450AB2AADF7C500FD3EC0 /* NetworkService.swift in Sources */,
 				367450B12AADFA5B00FD3EC0 /* CoinRow.swift in Sources */,
 				3607A6032AADD16400627E1C /* CryptoWathcerApp.swift in Sources */,
+				3683F1302AAF2A5800C1590E /* FavoriteButton.swift in Sources */,
 				367450B62AADFB9D00FD3EC0 /* CoinModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -433,6 +456,14 @@
 				minimumVersion = 7.0.0;
 			};
 		};
+		3683F1242AAEE0B000C1590E /* XCRemoteSwiftPackageReference "realm-cocoa" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-cocoa.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -440,6 +471,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 367450AD2AADF94F00FD3EC0 /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
+		};
+		3683F1252AAEE0B000C1590E /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3683F1242AAEE0B000C1590E /* XCRemoteSwiftPackageReference "realm-cocoa" */;
+			productName = Realm;
+		};
+		3683F1272AAEE0B000C1590E /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3683F1242AAEE0B000C1590E /* XCRemoteSwiftPackageReference "realm-cocoa" */;
+			productName = RealmSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

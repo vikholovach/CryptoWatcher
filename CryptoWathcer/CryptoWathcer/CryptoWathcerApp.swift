@@ -10,6 +10,7 @@ import SwiftUI
 @main
 struct CryptoWathcerApp: App {
     
+    
     @StateObject private var modelData = CoinViewModel(networkService: NetworkService())
     
     var body: some Scene {
