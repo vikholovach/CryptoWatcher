@@ -20,7 +20,7 @@ struct CoinRow: View {
     var coinIndex: Int {
         modelData.coins.firstIndex(where: {
             $0.id == coin.id
-        })!
+        }) ?? 0
     }
     
     //MARK: - Computed properties
@@ -33,8 +33,8 @@ struct CoinRow: View {
             CoinLogo(coin: coin)
             
             Text(coin.name)
-                .font(.title2)
-                .padding(.leading, 16)
+                .font(.headline)
+                .padding(.leading, 8)
             
             Spacer()
             
@@ -42,7 +42,7 @@ struct CoinRow: View {
                 Text("\(String(format:"%.02f", coinPrice))$")
                     .frame(maxWidth: .infinity, alignment: .trailing)
                     .font(.subheadline)
-                    .fontWeight(.medium)
+
                     
                 Text("24h ↑ \(String(format:"%.02f", coinFloatPercent))%")
                     .frame(maxWidth: .infinity, alignment: .trailing)
@@ -55,7 +55,8 @@ struct CoinRow: View {
             }
             
             FavoriteButton(isSet: $modelData.coins[coinIndex].isFavorite, coin: self.coin)
-            
+                .buttonStyle(.borderless)
+                
         }
     }
     

@@ -11,11 +11,13 @@ struct FavoriteButton: View {
     
     private let realm = RealmManager.shared
     
+    
     @Binding var isSet: Bool
-    
-    let coin: CoinData
-    
+    @State private var rotationAngle: Double = 0
     @EnvironmentObject var modelData: CoinViewModel
+ 
+    let coin: CoinData
+  
     
     private var coinIndex: Int? {
         modelData.coins.firstIndex(where: {
@@ -32,6 +34,12 @@ struct FavoriteButton: View {
             }
             let coin = modelData.coins[index]
             self.updateRealm(with: coin)
+            if isSet {
+                rotationAngle += 360
+            } else {
+                rotationAngle -= 360
+            }
+
         } label: {
             Label("Toggle Favorite",
                   systemImage: isSet
@@ -43,6 +51,13 @@ struct FavoriteButton: View {
                 ? .yellow
                 : .gray)
         }
+        .rotationEffect(.degrees(rotationAngle))
+        .animation(.easeInOut(duration: 0.24))
+        .scaleEffect(
+            isSet
+            ? 1.2
+            : 1.0)
+        
         
     }
     

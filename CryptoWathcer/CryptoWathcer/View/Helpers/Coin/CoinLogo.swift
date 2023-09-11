@@ -26,10 +26,10 @@ struct CoinLogo: View {
             .frame(
                 width: 40,
                 height: 40)
-            .overlay{
+            .overlay {
                 Circle().stroke(.white, lineWidth: 2)
             }
-            .shadow(color: .purple, radius: 5)
+            .shadow(color: Color(#colorLiteral(red: 0.8714533448, green: 0.723166883, blue: 0.9342088699, alpha: 1)).opacity(0.6), radius: 5)
             
     }
 }
