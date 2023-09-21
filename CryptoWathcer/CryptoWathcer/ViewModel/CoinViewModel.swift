@@ -21,6 +21,7 @@ final class CoinViewModel: ObservableObject {
         name: "Bitcoin",
         priceUsd: "25830.5227396003309120",
         changePercent24Hr: "-0.1570636474522199",
+        explorer: "https://blockchain.info/",
         isFavorite: false)
     
     // timer to run requests

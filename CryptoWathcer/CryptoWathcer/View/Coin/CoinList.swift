@@ -23,7 +23,6 @@ struct CoinList: View {
     
     var body: some View {
         NavigationView {
-            
             List {
                 Toggle(isOn: $showFavoritesOnly) {
                     Text("Favorite coins")
@@ -37,7 +36,14 @@ struct CoinList: View {
                 ForEach(showFavoritesOnly
                         ? filteredCoins
                         : modelData.coins) { coin in
-                    CoinRow(coin: coin)
+                    
+                    NavigationLink(destination: {
+                        //destination -> View on which we want to jump in
+                        WebViewContainer(coin: coin)
+                    }, label: {
+                        //view which we want to show in list
+                        CoinRow(coin: coin)
+                    })
                 }
             }
             .scrollContentBackground(.hidden)

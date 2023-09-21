@@ -17,6 +17,7 @@ struct CoinData: Codable, Equatable, Hashable, Identifiable {
     let name: String
     let priceUsd: String
     let changePercent24Hr: String
+    let explorer: String?
     
     // not containt in JSON resppnse
     // so we adding coding keys 
@@ -28,5 +29,6 @@ struct CoinData: Codable, Equatable, Hashable, Identifiable {
         case name
         case priceUsd
         case changePercent24Hr
+        case explorer
     }
 }
