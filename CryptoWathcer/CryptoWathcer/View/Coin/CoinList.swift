@@ -27,6 +27,12 @@ struct CoinList: View {
                 Toggle(isOn: $showFavoritesOnly) {
                     Text("Favorite coins")
                 }
+                .onChange(of: showFavoritesOnly) { newValue in
+                    if newValue {
+                        let impactMed = UIImpactFeedbackGenerator(style: .soft)
+                        impactMed.impactOccurred()
+                    }
+                }
                 .tint(Color(#colorLiteral(red: 0.3484552801, green: 0.933657825, blue: 0.9058339596, alpha: 1)).opacity(0.7))
                 .disabled(
                     showFavoritesOnly

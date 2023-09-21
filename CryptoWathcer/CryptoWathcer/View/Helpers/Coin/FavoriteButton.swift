@@ -37,7 +37,10 @@ struct FavoriteButton: View {
             } else {
                 rotationAngle -= 360
             }
-
+            
+            let impactMed = UIImpactFeedbackGenerator(style: .soft)
+            impactMed.impactOccurred()
+            
         } label: {
             Label("Toggle Favorite",
                   systemImage: isSet
